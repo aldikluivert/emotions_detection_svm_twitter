@@ -1,0 +1,19 @@
+{% extends "bootstrap/base.html" %}
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    <ul class=errors>
+    <div class="alert alert-danger" role="alert">
+    {% for error in field.errors %}
+     <strong><li>{{ error }}</li></strong>
+    {% endfor %}
+    </div>
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+
+
+
+

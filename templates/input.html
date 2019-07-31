@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% from "macro.html" import render_field %}
+{% block title %}
+Input
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h2 class="text-center">Aplikasi</h2>
+  <p  class="text-center">Deteksi Emosi Tentang Pemilihan Presiden 2019</p>
+    <p  class="text-center">Pada Twitter Dengan Text Mining</p>
+     <div class="row">
+      <div class="col-md-2"></div>
+          <div class="col-md-8">
+               <form action="" method="post" class="form" role="form">
+                {{ form.csrf_token() }}
+                    <d1>
+                    {{ render_field(form.keyword, class='form-control', placeholder='Masukkan Keyword') }}
+                        <br>
+                    {{ render_field(form.jumlah, class='form-control', placeholder='Masukkan Angka Antara 20-100') }}
+                    </d1>
+                <p >Jumlah yang dimasukkan adalah jumlah maksimal tweet yang diambil dari Twitter</p>
+                <button type="submit" class="btn btn-block btn-primary">Mulai Analisis</button>
+                </form>
+          </div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock %}
+
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-2"></div>-->
+        <!--<div class="col-md-8">-->
+            <!--<h1 class="text-center">Deteksi Emosi Tentang Pemilihan Presiden 2019 Pada Twitter Dengan Text Mining</h1>-->
+            <!--<br>-->
+        <!--</div>-->
+        <!--<div class="col-md-2"></div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-4"></div>-->
+        <!--<div class="col-md-4">-->
+            <!--<form action="" method="post" class="form" role="form">-->
+            <!--{{ form.csrf_token() }}-->
+                <!--<d1>-->
+                <!--{{ render_field(form.keyword, class='form-control', placeholder='Masukkan Keyword') }}-->
+                    <!--<br>-->
+                <!--{{ render_field(form.jumlah, class='form-control', placeholder='Masukkan Angka Antara 20-100') }}-->
+                <!--</d1>-->
+            <!--<p >Jumlah yang dimasukkan adalah jumlah maksimal tweet yang diambil dari Twitter</p>-->
+            <!--<button type="submit" class="btn btn-block btn-primary">Mulai Analisis</button>-->
+            <!--</form>-->
+        <!--</div>-->
+        <!--<div class="col-md-4"></div>-->
+        <!--</div>-->
+    <!--</div>-->

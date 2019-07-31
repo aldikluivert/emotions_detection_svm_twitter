@@ -1,0 +1,190 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}
+Output
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Hasil Deteksi Emosi</h1>
+<p class="text-center">Keyword : {{ keyword }}</p>
+<p class="text-center">Untuk Tweet tanggal {{ tanggal }}</p>
+<p class="text-center">Tweet terkumpul {{ count }} tweet</p>
+<br>
+<div class="text-center">
+    <img src="/static/wc.png" class="center" alt="Word Cloud">
+
+<table class="tg" align="center" border:0px;>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th><img src="static/emoticons/marah.png" style="width:96px; height:96px;" alt="Marah"></th>
+    <th><img src="static/emoticons/sedih.png" style="width:96px; height:96px;" alt="Sedih"></th>
+    <th><img src="static/emoticons/senang.png" style="width:96px; height:96px;" alt="Senang"></th>
+    <th><img src="static/emoticons/terkejut.png" style="width:96px; height:96px;" alt="Terkejut"></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Marah</td>
+    <td>Sedih</td>
+    <td>Senang</td>
+    <td>Terkejut</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>{{persen[0]}}</td>
+    <td>{{persen[1]}}</td>
+    <td>{{persen[2]}}</td>
+    <td>{{persen[3]}}</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+    <!--<style type="text/css">-->
+<!--.tg  {border-collapse:collapse;border-spacing:0;border:none;}-->
+<!--.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}-->
+<!--.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}-->
+<!--.tg .tg-0lax{text-align:left;vertical-align:top}-->
+<!--</style>-->
+<!--<table class="tg">-->
+  <!--<tr>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"><img src="static/emoticons/marah.png" style="width:96px; height:96px;" alt="Marah"></th>-->
+    <!--<th class="tg-0lax"><img src="static/emoticons/sedih.png" style="width:96px; height:96px;" alt="Sedih"></th>-->
+    <!--<th class="tg-0lax"><img src="static/emoticons/senang.png" style="width:96px; height:96px;" alt="Senang"></th>-->
+    <!--<th class="tg-0lax"><img src="static/emoticons/terkejut.png" style="width:96px; height:96px;" alt="Terkejut"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+    <!--<th class="tg-0lax"></th>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+    <!--<td class="tg-0lax"></td>-->
+  <!--</tr>-->
+<!--</table>-->
+    <!--<table class="table">-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td><img src="static/emoticons/senang.png" style="width:96px; height:96px;" alt="Senang"></td>-->
+            <!--<td><img src="static/emoticons/terkejut.png" style="width:96px; height:96px;" alt="Terkejut"></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td class="text-center">Marah</td>-->
+            <!--<td class="text-center">Sedih</td>-->
+            <!--<td class="text-center">Senang</td>-->
+            <!--<td class="text-center">Terkejut</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--{% for item in persen %}-->
+            <!--<td>{{item}}</td>-->
+            <!--{% endfor %}-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+
+<!--</table>-->
+</div>
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col" class="text-center">Tweet</th>
+                <th scope="col">Emosi</th>
+            </tr>
+        </thead>
+            {% for data in clf_result %}
+            <tr>
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+            {% endfor %}
+            </tr>
+            </table>
+<a href="{{ url_for('home') }}" class="btn btn-success">Kembali ke Halaman Masukan</a>
+</div>
+{% endblock %}
